@@ -30,3 +30,22 @@ json { "error": "Payment Required", "message": "This API is monetized via x402. 
 ## License
 
 MIT
+
+### 🌐 Paid API Specification
+
+**Endpoint:** `POST https://your-deployed-app.up.railway.app/api/scrape`  
+**Protocol:** `x402` (HTTP 402 Payment Required)  
+**Price:** `$0.02 USDC` per request  
+**Network:** `Base` (`chainId: 8453`)  
+**Asset Contract:** `0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913` (USDC)  
+**Payout Address:** `YOUR_BASE_WALLET_ADDRESS`  
+
+---
+
+#### 1. Unauthenticated Request (HTTP 402 Challenge)
+Send a standard POST request without payment headers:
+
+```bash
+curl -i -X POST [https://your-deployed-app.up.railway.app/api/scrape](https://your-deployed-app.up.railway.app/api/scrape) \
+  -H "Content-Type: application/json" \
+  -d '{"url": "[https://news.ycombinator.com](https://news.ycombinator.com)"}'
