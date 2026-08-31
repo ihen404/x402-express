@@ -1,0 +1,25 @@
+{
+  "name": "x402-express",
+  "version": "1.0.0",
+  "description": "3-line x402 payment middleware for monetizing Express.js APIs for AI agents.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "x402",
+    "express",
+    "ai-agents",
+    "payments",
+    "monetization",
+    "base",
+    "usdc"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^5.2.1",
+    "node-fetch": "^2.6.7",
+    "viem": "^2.56.1"
+  }
+}
