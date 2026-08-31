@@ -1,5 +1,5 @@
 {
-  "name": "x402-express",
+  "name": "@ihentrel/x402-express",
   "version": "1.2.1",
   "description": "3-line x402 payment middleware for monetizing Express.js APIs for AI agents.",
   "main": "index.js",
