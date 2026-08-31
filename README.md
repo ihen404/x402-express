@@ -49,3 +49,19 @@ Send a standard POST request without payment headers:
 curl -i -X POST [https://your-deployed-app.up.railway.app/api/scrape](https://your-deployed-app.up.railway.app/api/scrape) \
   -H "Content-Type: application/json" \
   -d '{"url": "[https://news.ycombinator.com](https://news.ycombinator.com)"}'
+Expected Response Header:
+HTTP/1.1 402 Payment Required
+X-Payment-Required: eyJzY2hlbWUiOiJleGFjdCIsInBheVRvIjoiMHhZT1V...
+Paid Request (Machine-to-Machine via x402 Client)
+AI agents using @ihentrel/x402-express or x402-fetch automatically parse the challenge header, sign a $0.02 USDC payment payload on Base, and retry:
+import { fetchWithX402 } from 'x402-client';
+
+const response = await fetchWithX402('[https://your-deployed-app.up.railway.app/api/scrape](https://your-deployed-app.up.railway.app/api/scrape)', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ url: '[https://news.ycombinator.com](https://news.ycombinator.com)' })
+});
+
+const data = await response.json();
+console.log(data.markdown); // Returns clean Markdown ready for LLM context
+
